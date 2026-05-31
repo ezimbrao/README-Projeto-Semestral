@@ -1,74 +1,139 @@
-Documentação do Projeto – Jogo de Corrida 2D
-Visão Geral
+# Jogo de Corrida 2D - Multiplayer Local
 
-O projeto consiste em um jogo de corrida 2D desenvolvido na Godot Engine, onde dois jogadores competem em tempo real para completar circuitos, desviando de obstáculos e acumulando pontos.
+## Sobre o Projeto
 
-O jogo possui múltiplos níveis, sistema de pontuação, HUD em tempo real e tela final de vencedor.
+Este projeto consiste em um jogo de corrida 2D desenvolvido utilizando a Godot Engine. A proposta é oferecer uma experiência competitiva local, onde dois jogadores disputam em tempo real, desviando de obstáculos e acumulando pontos ao completar o percurso.
 
-Mecânicas do Jogo
-Jogadores
-Dois jogadores locais:
-Player 1 (Carro Azul)
-Player 2 (Carro Verde)
-Controles
-Cada jogador possui controles independentes (teclado)
-Movimentação em 4 direções
-Objetivo
-Cruzar a linha de chegada
-Acumular pontos ao completar voltas/fases
-Funcionalidades Implementadas
-Sistema de Pontuação
-Controlado pelo script Global.gd
-Variáveis:
-map_score_p1
-map_score_p2
-HUD (Interface)
-Exibe pontuação em tempo real
-Atualizado continuamente via hud.gd
-Sistema de Fases
-Controle feito por level_controller.gd
-Permite mudança automática de cena
-Linha de Chegada
-Detecta quando o jogador finaliza (finish.gd)
-Incrementa pontuação
-Checkpoints
-Permitem validar se o jogador pode pontuar
-Obstáculos Dinâmicos
-Spawn automático (spawner.gd)
-Movimentação contínua
-Desaparecem ao sair da tela
-Tela de Vitória
-Exibe vencedor com base na pontuação
-Implementado em winner_screen.gd
-Estrutura do Projeto
-Scripts Principais
-player.gd → movimentação dos jogadores
-game_manager.gd → controle de pontuação
-level_controller.gd → troca de fases
-hud.gd → interface
-spawner.gd → geração de obstáculos
-finish.gd → lógica de chegada
-Assets
-Sprites de carros (cores diferentes)
-Tilesets de pista
-Obstáculos e cenário
-Fluxo do Jogo
-Jogadores iniciam corrida
-Desviam de obstáculos
-Passam por checkpoints
-Cruzam linha de chegada
-Pontuação é atualizada
-Próximo nível ou tela final
-Possíveis Melhorias
-Sistema de voltas (laps)
-Inteligência artificial para NPCs
-Multiplayer online
-Efeitos sonoros e música
-Menu inicial mais completo
-Sistema de colisão mais refinado
-Tecnologias Utilizadas
-Godot Engine
-GDScript
-Conclusão
+O jogo conta com múltiplos níveis, sistema de pontuação, interface em tempo real (HUD) e tela final de vencedor.
 
-O projeto demonstra conceitos importantes de desenvolvimento de jogos, como controle de estado, interação entre cenas, lógica de pontuação e gameplay multiplayer local.
+---
+
+## Gameplay
+
+* Multiplayer local para dois jogadores
+* Corrida com objetivo de chegar primeiro
+* Obstáculos dinâmicos durante a pista
+* Sistema de pontuação em tempo real
+* Tela de vitória ao final da partida
+
+---
+
+## Controles
+
+Cada jogador possui controles independentes no teclado:
+
+* Movimentação em quatro direções
+* Jogadores:
+
+  * Player 1 (Carro Azul)
+  * Player 2 (Carro Verde)
+
+---
+
+## Funcionalidades
+
+### Sistema de Pontuação
+
+* Gerenciado pelo script `Global.gd`
+* Variáveis principais:
+
+  * `map_score_p1`
+  * `map_score_p2`
+
+### HUD (Interface)
+
+* Exibe pontuação em tempo real
+* Atualização contínua via `hud.gd`
+
+### Sistema de Fases
+
+* Controlado por `level_controller.gd`
+* Transição automática entre níveis
+
+### Linha de Chegada
+
+* Detecta finalização (`finish.gd`)
+* Responsável por contabilizar pontos
+
+### Checkpoints
+
+* Garantem que o percurso seja seguido corretamente
+
+### Obstáculos Dinâmicos
+
+* Gerados automaticamente (`spawner.gd`)
+* Movimento contínuo na pista
+* Remoção automática ao sair da tela
+
+### Tela de Vitória
+
+* Exibe o jogador vencedor
+* Implementada em `winner_screen.gd`
+
+---
+
+## Estrutura do Projeto
+
+```
+Projeto
+ ├── scripts/
+ │   ├── player.gd
+ │   ├── game_manager.gd
+ │   ├── level_controller.gd
+ │   ├── hud.gd
+ │   ├── spawner.gd
+ │   └── finish.gd
+ ├── scenes/
+ ├── assets/
+ └── project.godot
+```
+
+---
+
+## Fluxo do Jogo
+
+1. Jogadores iniciam a corrida
+2. Desviam de obstáculos
+3. Passam pelos checkpoints
+4. Cruzam a linha de chegada
+5. Pontuação é atualizada
+6. Avançam de fase ou finalizam o jogo
+
+---
+
+## Possíveis Melhorias
+
+* Sistema de voltas (laps)
+* Multiplayer online
+* Inteligência artificial (NPCs)
+* Sons e trilha sonora
+* Menu inicial mais elaborado
+* Sistema de colisão mais avançado
+
+---
+
+## Tecnologias Utilizadas
+
+* Godot Engine
+* GDScript
+
+---
+
+## Como Executar o Projeto
+
+1. Instale a Godot Engine
+2. Clone ou baixe este repositório
+3. Abra o projeto na Godot
+4. Execute a cena principal
+
+---
+
+## Conclusão
+
+Este projeto foi desenvolvido com o objetivo de aplicar conceitos fundamentais de desenvolvimento de jogos, incluindo lógica de programação, organização de scripts, gerenciamento de estados, interação entre cenas e desenvolvimento multiplayer local.
+
+---
+
+## Autores
+
+Projeto desenvolvido como trabalho acadêmico.
